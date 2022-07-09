@@ -1,0 +1,40 @@
+{
+  "name": "vue-masterclass",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest --dom",
+    "coverage": "vitest --coverage",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "vue": "^3.2.25",
+    "vue-router": "^4.1.1",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@iconify/vue": "^3.2.1",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/test-utils": "2.0.0-rc.18",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import-helpers": "^1.2.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.2.0",
+    "happy-dom": "^6.0.2",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.12",
+    "tailwindcss": "^3.1.5",
+    "vite": "^2.9.9",
+    "vitest": "^0.18.0"
+  }
+}
