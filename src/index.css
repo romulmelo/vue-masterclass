@@ -15,4 +15,8 @@
   html, body {
     @apply font-body;
   }
+
+  body {
+    @apply antialiased;
+  }
 }
