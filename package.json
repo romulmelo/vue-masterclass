@@ -7,6 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest --dom",
+    "test:unit": "pnpm test -- --ui",
+    "test:staged": "pnpm test -- --run --changed HEAD~1",
     "coverage": "vitest --coverage",
     "prepare": "husky install"
   },
