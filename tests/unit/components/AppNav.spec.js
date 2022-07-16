@@ -5,19 +5,6 @@ import { mount } from "@vue/test-utils"
 import AppNav from "@/components/molecules/AppNav.vue"
 
 describe("AppNav", () => {
-  it("should display company name", () => {
-    const wrapper = mount(AppNav)
-
-    expect(wrapper.text()).toMatch("Vue Careers")
-  })
-
-  it("should have a title attribute with company name", () => {
-    const wrapper = mount(AppNav)
-    const logo = wrapper.find('[data-test="main-nav-logo"]')
-
-    expect(logo.attributes("title")).toBe("Vue Careers")
-  })
-
   it("should display menu items for navigation", () => {
     const wrapper = mount(AppNav)
     const navigationMenuItems = wrapper.findAll(
