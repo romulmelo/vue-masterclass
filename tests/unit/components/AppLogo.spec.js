@@ -10,6 +10,7 @@ describe("AppLogo", () => {
 
     expect(wrapper.text()).toMatch("Vue Careers")
     expect(wrapper.attributes("aria-label")).toBe("Vue Careers")
+    expect(wrapper.attributes("title")).toBe("Vue Careers")
   })
 
   it("should display logo", () => {
@@ -17,11 +18,5 @@ describe("AppLogo", () => {
 
     expect(wrapper.find("svg").exists()).toBe(true)
     expect(wrapper.find("svg").attributes("aria-label")).toBe("Vue Logo")
-  })
-
-  it("should have a title attribute with company name", () => {
-    const wrapper = mount(AppLogo)
-
-    expect(wrapper.attributes("title")).toBe("Vue Careers")
   })
 })
