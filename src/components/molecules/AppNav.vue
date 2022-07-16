@@ -11,9 +11,12 @@ export default {
   <header role="banner">
     <div class="flex h-14 border-b border-zinc-300 px-4 lg:h-16">
       <a
+        :title="companyName"
+        :aria-label="companyName"
         href="#"
         class="flex h-full w-fit items-center gap-2"
         tabindex="0"
+        data-test="main-nav-logo"
       >
         <div class="font-sans text-lg tracking-tight text-zinc-600 lg:text-xl">
           {{ companyName }}
