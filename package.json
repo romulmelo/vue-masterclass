@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "vitest --dom",
+    "test": "vitest",
     "test:unit": "pnpm test -- --ui",
     "test:staged": "pnpm test -- --run --changed HEAD~1",
     "coverage": "vitest --coverage",
