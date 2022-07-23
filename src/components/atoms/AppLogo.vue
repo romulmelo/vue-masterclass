@@ -19,12 +19,7 @@ export default {
     href="https://careers.google.com/"
     tabindex="0"
   >
-    <Icon
-      icon="logos:vue"
-      width="24"
-      height="24"
-      aria-label="Vue Logo"
-    />
+    <Icon icon="logos:vue" width="24" height="24" aria-label="Vue Logo" />
     <div
       class="whitespace-nowrap font-sans text-lg tracking-tight text-zinc-600 lg:text-xl"
     >

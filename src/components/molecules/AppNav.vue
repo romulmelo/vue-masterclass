@@ -32,16 +32,10 @@ export default {
           />
         </button>
       </div>
-      <div
-        id="logo"
-        class="ml-4 lg:ml-0"
-      >
+      <div id="logo" class="ml-4 lg:ml-0">
         <AppLogo />
       </div>
-      <nav
-        arial-label="Main navigation"
-        class="ml-12 flex-1"
-      >
+      <nav class="ml-12 flex-1" arial-label="Main navigation">
         <ul
           class="hidden h-full items-center gap-9 text-center font-sans lg:flex"
           data-test="main-nav-list"
