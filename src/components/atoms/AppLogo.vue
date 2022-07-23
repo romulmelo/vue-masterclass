@@ -25,7 +25,9 @@ export default {
       height="24"
       aria-label="Vue Logo"
     />
-    <div class="font-sans text-lg tracking-tight text-zinc-600 lg:text-xl">
+    <div
+      class="whitespace-nowrap font-sans text-lg tracking-tight text-zinc-600 lg:text-xl"
+    >
       {{ companyName }}
     </div>
   </a>
