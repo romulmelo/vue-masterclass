@@ -27,4 +27,19 @@ describe("AppNav", () => {
       "Students"
     ])
   })
+
+  it("should display menu hambuguer", () => {
+    const wrapper = mount(AppNav)
+    const hamburguerMenu = wrapper.find("[data-test='main-hamburguer-menu']")
+
+    expect(hamburguerMenu.exists()).toBe(true)
+    expect(hamburguerMenu.attributes("aria-label")).toBe("Navigation drawer")
+    expect(hamburguerMenu.attributes("aria-controls")).toBe(
+      "vc-header__drawer vc-header__drawer-backdrop"
+    )
+    expect(hamburguerMenu.find("svg").exists()).toBe(true)
+    expect(hamburguerMenu.find("svg").attributes("aria-label")).toBe(
+      "Open menu"
+    )
+  })
 })
