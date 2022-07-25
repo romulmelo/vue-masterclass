@@ -7,30 +7,29 @@ import AppLogo from "@/components/atoms/AppLogo.vue"
 import AppNavList from "@/components/molecules/AppNavList.vue"
 
 describe("AppNav", () => {
-  it("should have a logo", () => {
-    const wrapper = mount(AppHeader)
+  let sut
 
-    expect(wrapper.findComponent(AppLogo).exists()).toBe(true)
+  beforeEach(() => {
+    sut = mount(AppHeader)
+  })
+
+  it("should have a logo", () => {
+    expect(sut.findComponent(AppLogo).exists()).toBe(true)
   })
 
   it("should have a navigation list", () => {
-    const wrapper = mount(AppHeader)
-
-    expect(wrapper.findComponent(AppNavList).exists()).toBe(true)
+    expect(sut.findComponent(AppNavList).exists()).toBe(true)
   })
 
   it("should display menu hambuguer", () => {
-    const wrapper = mount(AppHeader)
-    const hamburguerMenu = wrapper.find("[data-test='main-hamburguer-menu']")
+    const hamburguerMenuButton = sut.find("[data-test='main-hamburguer-menu']")
+    const hamburguerMenuButtonIcon = hamburguerMenuButton.find("svg")
 
-    expect(hamburguerMenu.exists()).toBe(true)
-    expect(hamburguerMenu.attributes("aria-label")).toBe("Navigation drawer")
-    expect(hamburguerMenu.attributes("aria-controls")).toBe(
-      "vc-header__drawer vc-header__drawer-backdrop"
+    expect(hamburguerMenuButton.exists()).toBe(true)
+    expect(hamburguerMenuButton.attributes("aria-label")).toBe(
+      "Navigation drawer"
     )
-    expect(hamburguerMenu.find("svg").exists()).toBe(true)
-    expect(hamburguerMenu.find("svg").attributes("aria-label")).toBe(
-      "Open menu"
-    )
+    expect(hamburguerMenuButtonIcon.exists()).toBe(true)
+    expect(hamburguerMenuButtonIcon.attributes("aria-label")).toBe("Open menu")
   })
 })

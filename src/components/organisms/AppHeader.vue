@@ -15,11 +15,7 @@ export default {
         id="menu-hamburguer"
         class="relative -ml-4 flex w-14 items-center justify-center p-2 lg:hidden"
       >
-        <button
-          aria-label="Navigation drawer"
-          aria-controls="vc-header__drawer vc-header__drawer-backdrop"
-          data-test="main-hamburguer-menu"
-        >
+        <button aria-label="Navigation drawer" data-test="main-hamburguer-menu">
           <Icon
             icon="ic:baseline-menu"
             aria-label="Open menu"
