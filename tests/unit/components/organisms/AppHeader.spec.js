@@ -2,34 +2,25 @@
 
 import { mount } from "@vue/test-utils"
 
-import AppNav from "@/components/molecules/AppNav.vue"
+import AppHeader from "@/components/organisms/AppHeader.vue"
 import AppLogo from "@/components/atoms/AppLogo.vue"
+import AppNavList from "@/components/molecules/AppNavList.vue"
 
 describe("AppNav", () => {
   it("should have a logo", () => {
-    const wrapper = mount(AppNav)
+    const wrapper = mount(AppHeader)
 
     expect(wrapper.findComponent(AppLogo).exists()).toBe(true)
   })
 
-  it("should display menu items for navigation", () => {
-    const wrapper = mount(AppNav)
-    const navigationMenuItems = wrapper.findAll(
-      "[data-test='main-nav-list-item']"
-    )
-    const navigationMenuText = navigationMenuItems.map((item) => item.text())
+  it("should have a navigation list", () => {
+    const wrapper = mount(AppHeader)
 
-    expect(navigationMenuText).toEqual([
-      "Teams",
-      "Locations",
-      "Benefits",
-      "Jobs",
-      "Students"
-    ])
+    expect(wrapper.findComponent(AppNavList).exists()).toBe(true)
   })
 
   it("should display menu hambuguer", () => {
-    const wrapper = mount(AppNav)
+    const wrapper = mount(AppHeader)
     const hamburguerMenu = wrapper.find("[data-test='main-hamburguer-menu']")
 
     expect(hamburguerMenu.exists()).toBe(true)
