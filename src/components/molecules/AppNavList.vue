@@ -1,5 +1,11 @@
 <script>
 export default {
+  props: {
+    isVertical: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => ({
     list: ["Teams", "Locations", "Benefits", "Jobs", "Students"]
   })
@@ -7,7 +13,10 @@ export default {
 </script>
 
 <template>
-  <nav aria-label="Main navigation">
+  <nav
+    :class="['vc-nav', `${isVertical ? 'vc-nav--vertical' : ''}`]"
+    aria-label="Main navigation"
+  >
     <ul
       class="flex h-full items-center gap-9 text-center font-sans"
       data-test="nav-list"
@@ -28,3 +37,21 @@ export default {
     </ul>
   </nav>
 </template>
+
+<style lang="postcss" scoped>
+.vc-nav {
+  @apply hidden lg:block lg:flex-1;
+}
+
+.vc-nav--vertical {
+  @apply flex;
+}
+
+.vc-nav--vertical ul {
+  @apply flex-1 flex-col items-start gap-6;
+}
+
+.vc-nav--vertical ul li {
+  @apply w-full;
+}
+</style>

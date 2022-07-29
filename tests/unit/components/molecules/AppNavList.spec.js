@@ -18,4 +18,14 @@ describe("AppNavList", () => {
       "Students"
     ])
   })
+
+  it("should change display to vertical", () => {
+    const wrapper = mount(AppNavList, {
+      props: {
+        isVertical: true
+      }
+    })
+
+    expect(wrapper.classes()).toContain("vc-nav--vertical")
+  })
 })

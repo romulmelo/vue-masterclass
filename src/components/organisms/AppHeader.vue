@@ -26,10 +26,10 @@ export default {
           />
         </button>
       </div>
-      <div id="logo" class="ml-4 lg:ml-0">
+      <div id="logo" class="ml-4 mr-12 lg:ml-0">
         <AppLogo />
       </div>
-      <AppNavList class="hidden lg:ml-12 lg:block lg:flex-1" />
+      <AppNavList />
     </div>
   </header>
 </template>
