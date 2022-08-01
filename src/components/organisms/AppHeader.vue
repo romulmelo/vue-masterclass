@@ -1,10 +1,24 @@
 <script>
+import { defineAsyncComponent } from "vue"
+
 import { Icon } from "@iconify/vue"
 import AppLogo from "@/components/atoms/AppLogo.vue"
+import AppButton from "@/components/atoms/AppButton.vue"
 import AppNavList from "@/components/molecules/AppNavList.vue"
 
 export default {
-  components: { Icon, AppLogo, AppNavList }
+  components: {
+    Icon,
+    AppAvatar: defineAsyncComponent(() =>
+      import("@/components/atoms/AppAvatar.vue")
+    ),
+    AppLogo,
+    AppButton,
+    AppNavList
+  },
+  data: () => ({
+    isLoggedIn: false
+  })
 }
 </script>
 
@@ -26,10 +40,18 @@ export default {
           />
         </button>
       </div>
-      <div id="logo" class="ml-4 mr-12 lg:ml-0">
+      <div id="logo" class="ml-4 lg:mr-12 lg:ml-0">
         <AppLogo />
       </div>
       <AppNavList />
+      <div class="ml-auto flex items-center">
+        <AppAvatar
+          v-if="isLoggedIn"
+          url="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=120&h=120"
+          alt="Profile picture - John Doe"
+        />
+        <AppButton v-else>Sign In</AppButton>
+      </div>
     </div>
   </header>
 </template>
