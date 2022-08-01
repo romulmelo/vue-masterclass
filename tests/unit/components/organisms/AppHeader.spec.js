@@ -2,6 +2,8 @@
 
 import { mount } from "@vue/test-utils"
 
+import { expect } from "vitest"
+
 import AppHeader from "@/components/organisms/AppHeader.vue"
 
 describe("AppHeader", () => {
@@ -17,5 +19,20 @@ describe("AppHeader", () => {
 
   it("should have a navigation list", () => {
     expect(wrapper.findComponent({ name: "AppNavList" }).exists()).toBe(true)
+  })
+
+  describe("when user is logged out", () => {
+    it("should prompt user to log in", () => {
+      const wrapper = mount(AppHeader, {
+        data: () => ({
+          isLoggedIn: false
+        })
+      })
+      const loginButtonComponent = wrapper.findComponent({ name: "AppButton" })
+      const avatarImageComponent = wrapper.findComponent({ name: "AppAvatar" })
+
+      expect(loginButtonComponent.exists()).toBe(true)
+      expect(avatarImageComponent.exists()).toBe(false)
+    })
   })
 })
