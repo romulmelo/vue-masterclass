@@ -35,4 +35,25 @@ describe("AppHeader", () => {
       expect(avatarImageComponent.exists()).toBe(false)
     })
   })
+
+  describe("when user is logged in", () => {
+    it("should display user profile picture", () => {
+      const wrapper = mount(AppHeader, {
+        data: () => ({
+          isLoggedIn: true
+        }),
+        global: {
+          stubs: {
+            AppAvatar: true
+          }
+        }
+      })
+
+      const loginButtonComponent = wrapper.findComponent({ name: "AppButton" })
+      const avatarImageComponent = wrapper.findComponent({ name: "AppAvatar" })
+
+      expect(loginButtonComponent.exists()).toBe(false)
+      expect(avatarImageComponent.exists()).toBe(true)
+    })
+  })
 })
