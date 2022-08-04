@@ -26,4 +26,13 @@ describe("AppSubNav", () => {
       expect(jobCount.exists()).toBe(true)
     })
   })
+
+  describe("when user is not on job page", () => {
+    it("should display a link to job results page", () => {
+      const wrapper = mount(AppSubNav)
+      const jobMessage = wrapper.find('[data-test="subnav-job-message"]')
+
+      expect(jobMessage.text()).toMatch("Find a job at Google")
+    })
+  })
 })
