@@ -1,0 +1,31 @@
+.molecule-subnav {
+  @apply block h-14 w-full border-t border-zinc-300;
+
+  &__container {
+    @apply flex h-full items-center justify-between px-4 lg:px-8;
+  }
+
+  &__nav {
+    @apply flex-1 h-full;
+  }
+
+  &__list {
+    @apply flex h-full items-center justify-end gap-8;
+  }
+
+  &__item {
+    @apply flex h-full items-center;
+  }
+
+  &__link {
+    @apply flex h-full gap-1 py-2.5 items-center text-zinc-500 text-[0.875rem] font-sans transition-colors duration-200;
+
+    span {
+      @apply hidden lg:block;
+    }
+
+    &.is-active {
+      @apply text-blue-600;
+    }
+  }
+}
