@@ -1,0 +1,23 @@
+.organism-header {
+  @apply h-14 lg:h-16;
+
+  &__container {
+    @apply flex h-full items-center border-b border-zinc-300 px-4 lg:px-8;
+
+    & div {
+      @apply h-full;
+    }
+  }
+
+  &__icons {
+    @apply relative -ml-4 flex w-14 items-center justify-center p-2 lg:hidden;
+  }
+
+  &__logo {
+    @apply ml-4 lg:ml-0 lg:mr-12;
+  }
+
+  &__login {
+   @apply ml-auto flex items-center;
+  }
+}

@@ -1,5 +1,3 @@
-// @vitest-environment happy-dom
-
 import { mount } from "@vue/test-utils"
 
 import { expect } from "vitest"
@@ -18,7 +16,7 @@ describe("AppHeader", () => {
   })
 
   it("should have a navigation list", () => {
-    expect(wrapper.findComponent({ name: "AppNavList" }).exists()).toBe(true)
+    expect(wrapper.findComponent({ name: "AppNav" }).exists()).toBe(true)
   })
 
   describe("when user is logged out", () => {
