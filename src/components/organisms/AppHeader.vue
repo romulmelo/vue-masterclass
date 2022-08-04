@@ -18,7 +18,12 @@ export default {
   },
   data: () => ({
     isLoggedIn: false
-  })
+  }),
+  methods: {
+    handleSignIn() {
+      this.isLoggedIn = true
+    }
+  }
 }
 </script>
 
@@ -47,7 +52,7 @@ export default {
           url="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=120&h=120"
           alt="Profile picture - John Doe"
         />
-        <AppButton v-else>Sign In</AppButton>
+        <AppButton v-else @click="handleSignIn">Sign In</AppButton>
       </div>
     </div>
   </header>
