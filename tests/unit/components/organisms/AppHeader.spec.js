@@ -21,25 +21,15 @@ describe("AppHeader", () => {
 
   describe("when user is logged out", () => {
     it("should prompt user to log in", () => {
-      const wrapper = mount(AppHeader, {
-        data: () => ({
-          isLoggedIn: false
-        })
-      })
       const loginButtonComponent = wrapper.findComponent({ name: "AppButton" })
-      const avatarImageComponent = wrapper.findComponent({ name: "AppAvatar" })
 
       expect(loginButtonComponent.exists()).toBe(true)
-      expect(avatarImageComponent.exists()).toBe(false)
     })
   })
 
   describe("when user is logged in", () => {
-    it("should display user profile picture", () => {
+    it("should display user profile picture", async () => {
       const wrapper = mount(AppHeader, {
-        data: () => ({
-          isLoggedIn: true
-        }),
         global: {
           stubs: {
             AppAvatar: true
@@ -47,10 +37,16 @@ describe("AppHeader", () => {
         }
       })
 
-      const loginButtonComponent = wrapper.findComponent({ name: "AppButton" })
-      const avatarImageComponent = wrapper.findComponent({ name: "AppAvatar" })
+      let avatarImageComponent = wrapper.findComponent({ name: "AppAvatar" })
 
-      expect(loginButtonComponent.exists()).toBe(false)
+      expect(avatarImageComponent.exists()).toBe(false)
+
+      const loginButtonComponent = wrapper.findComponent({ name: "AppButton" })
+
+      await loginButtonComponent.trigger("click")
+
+      avatarImageComponent = wrapper.findComponent({ name: "AppAvatar" })
+
       expect(avatarImageComponent.exists()).toBe(true)
     })
   })
