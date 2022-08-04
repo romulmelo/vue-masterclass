@@ -3,7 +3,7 @@ import { Icon } from "@iconify/vue"
 export default {
   components: { Icon },
   data: () => ({
-    onJobResultsPage: true,
+    onJobResultsPage: false,
     list: [
       { label: "Saved Jobs", icon: "bookmark" },
       { label: "Jobs Alert", icon: "notifications-rounded" }
@@ -16,10 +16,22 @@ export default {
   <div class="molecule-subnav">
     <div class="molecule-subnav__container">
       <div class="molecule-subnav__info" data-test="subnav-job-count">
-        <Icon icon="material-symbols:search" width="24" height="24" />
-        <div class="molecule-subnav__stats">
+        <Icon
+          icon="material-symbols:search"
+          width="24"
+          height="24"
+          color="#71717a"
+        />
+        <div v-if="onJobResultsPage" class="molecule-subnav__stats">
           <span>4593</span>
           <span>jobs matched</span>
+        </div>
+        <div
+          v-else
+          class="molecule-subnav__message"
+          data-test="subnav-job-message"
+        >
+          <a href="#">Find a job at Google</a>
         </div>
       </div>
       <nav class="molecule-subnav__nav">
