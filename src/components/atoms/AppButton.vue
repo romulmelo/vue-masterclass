@@ -7,7 +7,7 @@ export default {
     },
     variant: {
       type: String,
-      default: "primary"
+      default: "filled"
     },
     size: {
       type: String,
@@ -26,32 +26,18 @@ export default {
     :type="type"
     v-bind="$attrs"
     :class="[
-      'button',
-      `button--${variant}`,
-      `button--${size}`,
-      `${rounded ? 'button--rounded' : ''}`
+      'atom-button',
+      `atom-button--${variant}`,
+      `atom-button--${size}`,
+      `${rounded ? 'atom-button--rounded' : ''}`
     ]"
   >
-    <span class="text-xs font-medium">
+    <span>
       <slot />
     </span>
   </button>
 </template>
 
-<style lang="postcss" scoped>
-.button {
-  @apply flex items-center gap-2 rounded py-3 px-5 text-center text-white transition-all;
-}
-
-.button--primary {
-  @apply bg-blue-600 hover:bg-blue-700 hover:shadow-md hover:shadow-blue-600/70;
-}
-
-.button--large {
-  @apply w-full;
-}
-
-.button--rounded {
-  @apply rounded-full;
-}
+<style lang="scss" scoped>
+@import "@/assets/styles/components/atoms/atom-button.scss";
 </style>
