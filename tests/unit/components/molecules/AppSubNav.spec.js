@@ -15,4 +15,15 @@ describe("AppSubNav", () => {
       navigationMenuLink.map((link) => link.attributes("aria-label"))
     ).toEqual(["Saved Jobs", "Jobs Alert"])
   })
+
+  describe("when user is on job page", () => {
+    it("should display job count", () => {
+      const wrapper = mount(AppSubNav, {
+        data: () => ({ onJobResultsPage: true })
+      })
+      const jobCount = wrapper.find('[data-test="subnav-job-count"]')
+
+      expect(jobCount.exists()).toBe(true)
+    })
+  })
 })
