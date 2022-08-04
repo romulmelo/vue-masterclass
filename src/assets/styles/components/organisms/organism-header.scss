@@ -1,8 +1,8 @@
 .organism-header {
-  @apply h-14 lg:h-16;
+  @apply border-b border-zinc-300;
 
   &__container {
-    @apply flex h-full items-center border-b border-zinc-300 px-4 lg:px-8;
+    @apply flex items-center px-4 lg:px-8 h-14 lg:h-16;
 
     & div {
       @apply h-full;
