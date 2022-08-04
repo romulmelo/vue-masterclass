@@ -28,4 +28,20 @@
       @apply text-blue-600;
     }
   }
+
+  &__info {
+    @apply flex items-center justify-between gap-4;
+  }
+
+  &__stats {
+    @apply flex gap-1;
+
+    & > span {
+      @apply text-[0.875rem] font-sans text-zinc-500;
+    }
+
+    & > span:first-child {
+      @apply  text-green-700;
+    }
+  }
 }

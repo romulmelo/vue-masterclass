@@ -3,6 +3,7 @@ import { Icon } from "@iconify/vue"
 export default {
   components: { Icon },
   data: () => ({
+    onJobResultsPage: true,
     list: [
       { label: "Saved Jobs", icon: "bookmark" },
       { label: "Jobs Alert", icon: "notifications-rounded" }
@@ -14,7 +15,13 @@ export default {
 <template>
   <div class="molecule-subnav">
     <div class="molecule-subnav__container">
-      <div></div>
+      <div class="molecule-subnav__info" data-test="subnav-job-count">
+        <Icon icon="material-symbols:search" width="24" height="24" />
+        <div class="molecule-subnav__stats">
+          <span>4593</span>
+          <span>jobs matched</span>
+        </div>
+      </div>
       <nav class="molecule-subnav__nav">
         <ul class="molecule-subnav__list">
           <li
