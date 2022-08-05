@@ -2,7 +2,7 @@
   "tabWidth": 2,
   "trailingComma": "none",
   "singleQuote": false,
-  "singleAttributePerLine": true,
+  "singleAttributePerLine": false,
   "semi": false,
   "bracketSpacing": true,
   "plugins": ["prettier-plugin-tailwindcss"]
