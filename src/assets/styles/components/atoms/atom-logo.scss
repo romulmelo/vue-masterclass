@@ -1,0 +1,7 @@
+.atom-logo {
+  @apply flex h-full w-fit items-center gap-2;
+
+  &__title {
+    @apply text-lg font-sans whitespace-nowrap tracking-tight text-zinc-600 lg:text-xl;
+  }
+}
