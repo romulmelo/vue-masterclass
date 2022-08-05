@@ -2,6 +2,11 @@
 import { Icon } from "@iconify/vue"
 export default {
   components: { Icon },
+  props: {
+    logged: {
+      type: Boolean
+    }
+  },
   data: () => ({
     onJobResultsPage: false,
     list: [
@@ -34,7 +39,7 @@ export default {
           <a href="#">Find a job at Google</a>
         </div>
       </div>
-      <nav class="molecule-subnav__nav">
+      <nav v-if="logged" class="molecule-subnav__nav" data-test="subnav-list">
         <ul class="molecule-subnav__list">
           <li
             v-for="listItem in list"

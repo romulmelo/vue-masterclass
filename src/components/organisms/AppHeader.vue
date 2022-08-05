@@ -4,6 +4,7 @@ import { defineAsyncComponent } from "vue"
 import AppButton from "@/components/atoms/AppButton.vue"
 import AppLogo from "@/components/atoms/AppLogo.vue"
 import AppNav from "@/components/molecules/AppNav.vue"
+import AppSubNav from "@/components/molecules/AppSubnav.vue"
 import { Icon } from "@iconify/vue"
 
 export default {
@@ -14,7 +15,8 @@ export default {
     ),
     AppLogo,
     AppButton,
-    AppNav
+    AppNav,
+    AppSubNav
   },
   data: () => ({
     isLoggedIn: false
@@ -55,6 +57,7 @@ export default {
         <AppButton v-else @click="handleSignIn">Sign In</AppButton>
       </div>
     </div>
+    <AppSubNav :logged="isLoggedIn" />
   </header>
 </template>
 
