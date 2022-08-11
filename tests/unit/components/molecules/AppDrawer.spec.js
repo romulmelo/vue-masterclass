@@ -26,4 +26,17 @@ describe("AppDrawer", () => {
       "Students"
     ])
   })
+
+  it("should close drawer when clicked outside", async () => {
+    const wrapper = mount(AppDrawer, {
+      props: {
+        open: true
+      }
+    })
+    const backdrop = wrapper.find('[data-test="drawer-backdrop]')
+
+    await backdrop.trigger("click")
+
+    expect(wrapper.emitted("update:open")[0][0]).toBe(false)
+  })
 })
