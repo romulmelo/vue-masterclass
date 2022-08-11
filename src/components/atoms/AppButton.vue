@@ -43,7 +43,7 @@ export default {
 }
 
 .filled {
-  @apply bg-blue-600 text-white hover:bg-blue-600/70;
+  @apply bg-blue-600 text-white hover:shadow-blue-600/70;
 }
 
 .outline {
