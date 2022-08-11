@@ -31,7 +31,7 @@ export default {
             v-for="item in list"
             :key="item"
             :class="$style.drawerNavigationItem"
-            data-test="drawer-link"
+            data-test="nav-list-item"
           >
             <a href="#" :class="$style.drawerNavigationLink">
               {{ item }}
