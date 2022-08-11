@@ -2,14 +2,25 @@
 import AppLogo from "@/components/atoms/AppLogo.vue"
 export default {
   components: { AppLogo },
+  props: {
+    open: {
+      type: Boolean
+    }
+  },
+  emits: ["update:open"],
   data: () => ({
     list: ["Teams", "Locations", "Benefits", "Jobs", "Students"]
-  })
+  }),
+  methods: {
+    handleClose() {
+      return this.$emit("update:open", false)
+    }
+  }
 }
 </script>
 
 <template>
-  <div :class="$style.drawer">
+  <div v-show="open" :class="$style.drawer">
     <div :class="$style.drawerContainer">
       <div :class="$style.drawerLogo">
         <AppLogo />
@@ -30,7 +41,12 @@ export default {
       </nav>
     </div>
   </div>
-  <div :class="$style.drawerBackdrop"></div>
+  <div
+    v-show="open"
+    :class="$style.drawerBackdrop"
+    data-test="drawer-backdrop"
+    @click="handleClose"
+  />
 </template>
 
 <style lang="css" module>
