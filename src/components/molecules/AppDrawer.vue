@@ -1,6 +1,11 @@
 <script>
 import AppLogo from "@/components/atoms/AppLogo.vue"
-export default { components: { AppLogo } }
+export default {
+  components: { AppLogo },
+  data: () => ({
+    list: ["Teams", "Locations", "Benefits", "Jobs", "Students"]
+  })
+}
 </script>
 
 <template>
@@ -9,6 +14,20 @@ export default { components: { AppLogo } }
       <div :class="$style.drawerLogo">
         <AppLogo />
       </div>
+      <nav :class="$style.drawerNavigation">
+        <ul :class="$style.drawerNavigationList">
+          <li
+            v-for="item in list"
+            :key="item"
+            :class="$style.drawerNavigationItem"
+            data-test="drawer-link"
+          >
+            <a href="#" :class="$style.drawerNavigationLink">
+              {{ item }}
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
   <div :class="$style.drawerBackdrop"></div>
@@ -25,6 +44,22 @@ export default { components: { AppLogo } }
 
 .drawerLogo {
   @apply h-14 border-b border-zinc-300 px-4 lg:h-16;
+}
+
+.drawerNavigation {
+  @apply py-5;
+}
+
+.drawerNavigationList {
+  @apply block text-left;
+}
+
+.drawerNavigationItem {
+  @apply block h-auto;
+}
+
+.drawerNavigationLink {
+  @apply block h-12 px-4 py-2.5 font-sans text-[0.875rem] text-zinc-500 transition-colors hover:text-zinc-900;
 }
 
 .drawerBackdrop {
