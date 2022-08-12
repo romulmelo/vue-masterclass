@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div v-show="open" :class="$style.drawer">
+  <div v-show="open" :class="$style.drawer" data-test="drawer">
     <div :class="$style.drawerContainer">
       <div :class="$style.drawerLogo">
         <AppLogo />

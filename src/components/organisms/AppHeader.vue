@@ -21,11 +21,15 @@ export default {
     Icon
   },
   data: () => ({
-    isLoggedIn: false
+    isLoggedIn: false,
+    openDrawer: false
   }),
   methods: {
     handleSignIn() {
       this.isLoggedIn = true
+    },
+    handleOpenDrawer() {
+      this.openDrawer = true
     }
   }
 }
@@ -35,7 +39,11 @@ export default {
   <header :class="$style.header" role="banner">
     <div :class="$style.headerContainer">
       <div :class="$style.headerIcons">
-        <button aria-label="Navigation drawer" data-test="main-hamburguer-menu">
+        <button
+          aria-label="Navigation drawer"
+          data-test="menu-button"
+          @click="handleOpenDrawer"
+        >
           <Icon
             icon="ic:baseline-menu"
             aria-label="Open menu"
@@ -58,7 +66,7 @@ export default {
         />
         <AppButton v-else @click="handleSignIn">Sign In</AppButton>
       </div>
-      <AppDrawer />
+      <AppDrawer v-model:open="openDrawer" />
     </div>
     <AppSubNav :logged="isLoggedIn" />
   </header>
