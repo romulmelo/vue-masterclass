@@ -14,9 +14,11 @@ export default {
 </script>
 
 <template>
-  <img class="atom-avatar" title="Profile" :src="url" :alt="alt" />
+  <img :class="$style.avatarProfile" title="Profile" :src="url" :alt="alt" />
 </template>
 
-<style lang="scss" scoped>
-@import "@/assets/styles/components/atoms/atom-avatar.scss";
+<style lang="css" module>
+.avatarProfile {
+  @apply h-10 w-10 cursor-pointer rounded-full object-cover;
+}
 </style>
