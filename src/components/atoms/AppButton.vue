@@ -23,13 +23,12 @@ export default {
 
 <template>
   <button
-    :type="type"
     v-bind="$attrs"
     :class="[
-      'atom-button',
-      `atom-button--${variant}`,
-      `atom-button--${size}`,
-      `${rounded ? 'atom-button--rounded' : ''}`
+      $style.button,
+      $style[variant],
+      $style[size],
+      `${rounded ? $style.roundedFull : ''}`
     ]"
   >
     <span>
@@ -38,6 +37,28 @@ export default {
   </button>
 </template>
 
-<style lang="scss" scoped>
-@import "@/assets/styles/components/atoms/atom-button.scss";
+<style lang="css" module>
+.button {
+  @apply flex items-center justify-center gap-2 whitespace-nowrap rounded bg-none py-3 px-5 text-xs font-medium transition-all hover:shadow-md;
+}
+
+.filled {
+  @apply bg-blue-600 text-white hover:shadow-blue-600/70;
+}
+
+.outline {
+  @apply bg-transparent text-blue-600 hover:shadow-zinc-400/70;
+}
+
+.roundedFull {
+  @apply rounded-full;
+}
+
+.small {
+  @apply w-fit;
+}
+
+.wide {
+  @apply w-full;
+}
 </style>

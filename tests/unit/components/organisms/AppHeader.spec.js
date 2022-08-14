@@ -1,7 +1,5 @@
 import { mount } from "@vue/test-utils"
 
-import { expect } from "vitest"
-
 import AppHeader from "@/components/organisms/AppHeader.vue"
 
 describe("AppHeader", () => {
@@ -17,6 +15,16 @@ describe("AppHeader", () => {
 
   it("should have a navigation list", () => {
     expect(wrapper.findComponent({ name: "AppNav" }).exists()).toBe(true)
+  })
+
+  it("should open the drawer when user clicks on menu button", async () => {
+    const button = wrapper.find('[data-test="menu-button"]')
+
+    await button.trigger("click")
+
+    const drawer = wrapper.find('[data-test="drawer"]')
+
+    expect(drawer.attributes("style")).toBeUndefined()
   })
 
   describe("when user is logged out", () => {
